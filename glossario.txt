@@ -9,24 +9,28 @@
 ## 2. **MODELO RELACIONAL DE BD**
  --exemplo simples de como seria um modelo relacional para um sistema de vendas, com três tabelas:
 
-2.1. Tabela Clientes
-Essa tabela armazena informações sobre os clientes da loja.
+**Tabela Clientes**
 
-id_cliente	nome	email	telefone
-1	João Silva	joao@email.com	123456789
-2	Maria Souza	maria@email.com	987654321
-2. Tabela Produtos
-Aqui ficam os produtos disponíveis para venda.
+| id_cliente | nome       | email                | telefone     |
+|------------|------------|----------------------|--------------|
+| 1          | João Silva | joao@email.com        | 123456789    |
+| 2          | Maria Souza| maria@email.com       | 987654321    |
 
-id_produto	nome_produto	preço
-101	Camiseta	39.90
-102	Calça Jeans	89.90
-3. Tabela Pedidos
-Essa tabela registra os pedidos feitos pelos clientes, vinculando-os aos produtos que foram comprados.
+**Tabela Produtos**
 
-id_pedido	id_cliente	id_produto	data_pedido
-1001	1	101	2025-02-15
-1002	2	102	2025-02-16
+| id_produto | nome_produto | preço |
+|------------|--------------|-------|
+| 101        | Camiseta     | 39.90 |
+| 102        | Calça Jeans  | 89.90 |
+| 103        | Pizza        | 29.90 |
+
+ **Tabela Pedidos**
+
+| id_pedido | id_cliente | id_produto | data_pedido |
+|-----------|------------|------------|-------------|
+| 1001      | 1          | 101        | 2025-02-15  |
+| 1002      | 2          | 103        | 2025-02-16  |
+| 1003      | 1          | 102        | 2025-02-17  |
 
 ----
 ## 3. **MICROSERVIÇO**
