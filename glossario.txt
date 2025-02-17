@@ -1,6 +1,15 @@
- Exemplo simples de como seria um modelo relacional para um sistema de vendas, com três tabelas:
+## 1. **BANCO DE DADOS E SUA RELAÇÃO COM O SISTEMA GERENCIADOR DE BANCO DE DADOS(SGDB)**
 
-1. Tabela Clientes
+-Banco de Dados: É uma coleção organizada de dados que podem ser acessados, gerenciados e manipulados de forma eficiente. Ele armazena informações em tabelas, facilitando consultas, inserções e atualizações.
+-SGBD (Sistema de Gerenciamento de Banco de Dados): É o software que facilita a criação, o gerenciamento e a manipulação dos dados em um banco de dados. Ele garante a integridade, segurança, escalabilidade e a execução de operações como consultas e backups, proporcionando uma interface para os usuários interagirem com os dados.
+*(Em resumo, o banco de dados armazena os dados, enquanto o SGBD é a ferramenta que permite gerenciar e acessar esses dados.)*
+
+----
+
+## 2. **MODELO RELACIONAL DE BD**
+ --exemplo simples de como seria um modelo relacional para um sistema de vendas, com três tabelas:
+
+2.1. Tabela Clientes
 Essa tabela armazena informações sobre os clientes da loja.
 
 id_cliente	nome	email	telefone
@@ -18,13 +27,20 @@ Essa tabela registra os pedidos feitos pelos clientes, vinculando-os aos produto
 id_pedido	id_cliente	id_produto	data_pedido
 1001	1	101	2025-02-15
 1002	2	102	2025-02-16
-Como as tabelas se relacionam:
-A tabela Clientes tem informações sobre quem são os clientes.
-A tabela Produtos contém os itens que estão à venda.
-A tabela Pedidos conecta clientes e produtos. Ela mostra quem comprou o quê e quando.
-Relacionamentos:
-Cliente com Pedido: Através da coluna id_cliente, que indica qual cliente fez o pedido.
-Produto com Pedido: Através da coluna id_produto, que indica quais produtos foram comprados em cada pedido.
-Chaves primárias e estrangeiras:
-Chave primária: A chave que identifica de forma única um registro dentro da tabela. Por exemplo, id_cliente é a chave primária na tabela de Clientes.
-Chave estrangeira: A chave que conecta uma tabela com outra. Por exemplo, em Pedidos, a coluna id_cliente é uma chave estrangeira que se conecta à chave primária id_cliente na tabela Clientes.
+
+----
+## 3. **MICROSERVIÇO**
+
+Um **microserviço** é uma abordagem arquitetural que divide uma aplicação em várias partes pequenas e independentes, chamadas de microserviços, cada uma responsável por uma funcionalidade específica. Cada microserviço pode ser desenvolvido, escalado e implantado de forma autônoma.
+
+# Características:
+- **Independência**: Cada microserviço é responsável por uma tarefa específica e funciona de forma isolada.
+- **Escalabilidade**: Microserviços podem ser escalados individualmente conforme a demanda.
+- **Desempenho**: Permite que diferentes tecnologias sejam usadas para cada microserviço.
+
+# Exemplo:
+Em uma aplicação de e-commerce, um microserviço pode gerenciar os **pedidos**, outro os **clientes**, e outro o **pagamento**. Eles se comunicam entre si via APIs.
+
+# Benefícios:
+- Facilidade de manutenção e atualizações independentes.
+- Resiliência, pois falhas em um microserviço não afetam o sistema todo.
