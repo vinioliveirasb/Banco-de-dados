@@ -1,1 +1,30 @@
+ Exemplo simples de como seria um modelo relacional para um sistema de vendas, com três tabelas:
 
+1. Tabela Clientes
+Essa tabela armazena informações sobre os clientes da loja.
+
+id_cliente	nome	email	telefone
+1	João Silva	joao@email.com	123456789
+2	Maria Souza	maria@email.com	987654321
+2. Tabela Produtos
+Aqui ficam os produtos disponíveis para venda.
+
+id_produto	nome_produto	preço
+101	Camiseta	39.90
+102	Calça Jeans	89.90
+3. Tabela Pedidos
+Essa tabela registra os pedidos feitos pelos clientes, vinculando-os aos produtos que foram comprados.
+
+id_pedido	id_cliente	id_produto	data_pedido
+1001	1	101	2025-02-15
+1002	2	102	2025-02-16
+Como as tabelas se relacionam:
+A tabela Clientes tem informações sobre quem são os clientes.
+A tabela Produtos contém os itens que estão à venda.
+A tabela Pedidos conecta clientes e produtos. Ela mostra quem comprou o quê e quando.
+Relacionamentos:
+Cliente com Pedido: Através da coluna id_cliente, que indica qual cliente fez o pedido.
+Produto com Pedido: Através da coluna id_produto, que indica quais produtos foram comprados em cada pedido.
+Chaves primárias e estrangeiras:
+Chave primária: A chave que identifica de forma única um registro dentro da tabela. Por exemplo, id_cliente é a chave primária na tabela de Clientes.
+Chave estrangeira: A chave que conecta uma tabela com outra. Por exemplo, em Pedidos, a coluna id_cliente é uma chave estrangeira que se conecta à chave primária id_cliente na tabela Clientes.
