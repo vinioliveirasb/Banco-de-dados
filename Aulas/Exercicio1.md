@@ -3,7 +3,7 @@
 O diagrama de banco de dados foi modelado utilizando DBML (Database Markup Language).
 
 ```dbml
-// Definição do banco de dados
+// Use DBML to define your database structure
 // Docs: https://dbml.dbdiagram.io/docs
 
 Table Vendedor {
@@ -35,24 +35,24 @@ Table Produto {
   Descricao text
   Preco decimal
   Estoque_Atual int
-  ID_Prateleira int [ref: > Prateleira.ID_Prateleira]
+  ID_Prateleira int
 }
 
 Table Venda {
   ID_Venda int [pk]
   Data datetime
   Valor_Total decimal
-  ID_Vendedor int [ref: > Vendedor.ID_Vendedor]
-  ID_Cliente int [ref: > Cliente.ID_Cliente]
+  ID_Vendedor int
+  ID_Cliente int
 }
 
 Table Venda_Produto {
-  ID_Venda int [ref: > Venda.ID_Venda]
-  ID_Produto int [ref: > Produto.ID_Produto]
+  ID_Venda int
+  ID_Produto int
   Quantidade int
   Preco_Unidade decimal
   Total_Item decimal
-  primary key(ID_Venda, ID_Produto)  // Usando o método alternativo para chave composta
+  primary key(ID_Venda, ID_Produto)
 }
 
 // Relacionamentos (foreign keys)
