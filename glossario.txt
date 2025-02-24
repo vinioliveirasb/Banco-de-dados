@@ -61,3 +61,10 @@ Em uma aplicação de e-commerce, um microserviço pode gerenciar os **pedidos**
 -Projeto de Banco de Dados: Após a modelagem, o projeto do banco de dados envolve a transformação do modelo lógico em um modelo físico, ou seja, a criação do banco de dados real no sistema de gerenciamento de banco de dados (SGBD) escolhido. Isso inclui decisões sobre índices, chaves primárias, tipos de dados e a estrutura de armazenamento, além da otimização de consultas para garantir alta performance.
 
 ''Ao modelar e projetar tanto o sistema quanto o banco de dados, os desenvolvedores buscam criar soluções eficientes, escaláveis e com baixo risco de erros, garantindo que o sistema possa ser facilmente mantido e evoluído ao longo do tempo.
+
+----
+    ###             PROPRIETARIPO => OBRA (Ordem.Serviço) <= ENGENHEIRO;
+                                           ^^
+                                        PEDREIRO
+
+
