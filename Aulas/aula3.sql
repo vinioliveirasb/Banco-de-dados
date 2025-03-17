@@ -1,15 +1,15 @@
--- Criando as tabelas do diagrama ER fornecido
+-- Criando as tabelas do diagrama ER para SQL Server (T-SQL)
 
 CREATE TABLE EMPREGADO (
-    id_empregado SERIAL PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    tipo VARCHAR(50),
-    CIC VARCHAR(20) UNIQUE NOT NULL
+    id_empregado INT IDENTITY(1,1) PRIMARY KEY,
+    nome NVARCHAR(100) NOT NULL,
+    tipo NVARCHAR(50),
+    CIC NVARCHAR(20) UNIQUE NOT NULL
 );
 
 CREATE TABLE DEPARTAMENTO (
-    id_departamento SERIAL PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL
+    id_departamento INT IDENTITY(1,1) PRIMARY KEY,
+    nome NVARCHAR(100) NOT NULL
 );
 
 CREATE TABLE LOTACAO (
@@ -26,15 +26,15 @@ CREATE TABLE GERENCIA (
 );
 
 CREATE TABLE SECRETARIA (
-    id_secretaria SERIAL PRIMARY KEY,
+    id_secretaria INT IDENTITY(1,1) PRIMARY KEY,
     id_empregado INT UNIQUE,
     FOREIGN KEY (id_empregado) REFERENCES EMPREGADO(id_empregado)
 );
 
 CREATE TABLE ENGENHEIRO (
-    id_engenheiro SERIAL PRIMARY KEY,
+    id_engenheiro INT IDENTITY(1,1) PRIMARY KEY,
     id_empregado INT UNIQUE,
-    CREA VARCHAR(20) UNIQUE NOT NULL,
+    CREA NVARCHAR(20) UNIQUE NOT NULL,
     FOREIGN KEY (id_empregado) REFERENCES EMPREGADO(id_empregado)
 );
 
@@ -46,8 +46,8 @@ CREATE TABLE PARTICIPACAO (
 );
 
 CREATE TABLE PROJETO (
-    id_projeto SERIAL PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL
+    id_projeto INT IDENTITY(1,1) PRIMARY KEY,
+    nome NVARCHAR(100) NOT NULL
 );
 
 CREATE TABLE DOMINIO (
@@ -58,6 +58,6 @@ CREATE TABLE DOMINIO (
 );
 
 CREATE TABLE PROCESSADOR_DE_TEXTOS (
-    id_processador SERIAL PRIMARY KEY,
-    modelo VARCHAR(100) NOT NULL
+    id_processador INT IDENTITY(1,1) PRIMARY KEY,
+    modelo NVARCHAR(100) NOT NULL
 );
